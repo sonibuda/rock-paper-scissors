@@ -19,5 +19,21 @@ if (computerChoice === 1) {
 
 console.log(computerChoice); //delete this later
 
+// humanChoice variable prompts user to enter rock, paper or scissors so they can play the game.
+let humanChoice = prompt("To play, type your choice of rock, paper, or scissors.");
+// get HumanChoice function takes human choice and converts it to a number, 1 for rock, 2 for paper
+// and 3 for scissors
+function getHumanChoice(rock, paper, scissors) {
+  if (humanChoice === "rock") {
+    return 1
+  } else if (humanChoice === "paper") {
+    return 2
+  } else {
+    return 3
+  }
+}
+
+console.log(getHumanChoice("paper"));
+// delete this later
 
 
