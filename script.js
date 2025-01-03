@@ -100,4 +100,63 @@ function playRound(humanSelection) {
 
 getHumanChoice();
 
+function playGame() {
+humanScore = 0; //declares a variable to track the player's score and initializes it to 0.
+computerScore = 0; //declares a variable to track computer score and initializes it to 0.
+let roundsPlayed = 0;
+
+
+const rockButton = document.getElementById('rock');
+const paperButton = document.getElementById('paper');
+const scissorsButton = document.getElementById('scissors');
+
+rockButton.addEventListener("click", () => {
+    playRound("rock");
+    roundsPlayed++;
+    checkGameEnd();
+});
+
+paperButton.addEventListener("click", () => {
+    playRound("paper");
+    roundsPlayed++
+    checkGameEnd();
+});
+
+scissorsButton.addEventListener("click", () => {
+    playRound("scissors");
+    roundsPlayed++
+    checkGameEnd();
+});
+
+function checkGameEnd() {
+    if (roundsPlayed === 5) {
+        let finalResultMessage = "";
+    
+        if (humanScore > computerScore) {
+            finalResultMessage = 'Game over. You are the champion!';
+        } else if (humanScore < computerScore) {
+            finalResultMessage = 'Game over. The computer wins. At least you got second place.';
+        } else {
+           finalResultMessage = 'Game over. You tied with the computer.';
+        }
+    
+        const finalResultDiv = document.getElementById('finalResult');
+        finalResultDiv.textContent = finalResultMessage;
+
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+    }
+
+
+    } 
+    
+}
+
+ 
+
+
+
+playGame();
+
 
