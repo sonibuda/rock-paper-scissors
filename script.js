@@ -27,17 +27,7 @@ function getHumanChoice() {
     const paperButton = document.getElementById('paper');
     const scissorsButton = document.getElementById('scissors');
 
-   rockButton.addEventListener("click", () => {
-    playRound("rock");
-   });
-
-   paperButton.addEventListener("click", () => {
-    playRound("paper");
-   });
-
-  scissorsButton.addEventListener("click", () => {
-    playRound("scissors");
-  });
+ 
    
 }
 
