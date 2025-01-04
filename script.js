@@ -142,20 +142,26 @@ function checkGameEnd() {
     
         const finalResultDiv = document.getElementById('finalResult');
         finalResultDiv.textContent = finalResultMessage;
+      
+
 
         rockButton.disabled = true;
         paperButton.disabled = true;
         scissorsButton.disabled = true;
-    }
 
+        const restartButton = document.createElement('button');
+        restartButton.textContent = 'Restart';
+        restartButton.id = "restartButton";
+        restartButton.addEventListener('click', () => {
+            location.reload();
+        });
+
+        finalResultDiv.appendChild(restartButton);
+    }
 
     } 
     
 }
-
- 
-
-
 
 playGame();
 
